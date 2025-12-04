@@ -306,6 +306,9 @@
                     <button type="submit" data-key="login">Login</button>
                 </div>
                 <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <div id="forgotPasswordLink" style="display: none; margin-bottom: 1rem;">
+                        <button type="button" onclick="openForgotPassword()" style="background: none; border: none; color: var(--primary); cursor: pointer; text-decoration: underline;" data-key="forgotPassword">Forgot Password?</button>
+                    </div>
                     <p style="margin-bottom: 0.5rem; color: var(--muted-foreground);" data-key="noAccount">Don't have an account?</p>
                     <button type="button" onclick="switchToRegistration()" style="background: none; border: none; color: var(--primary); cursor: pointer; text-decoration: underline;" data-key="createAccount">Create New Account</button>
                 </div>
@@ -343,6 +346,60 @@
                 <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
                     <p style="margin-bottom: 0.5rem; color: var(--muted-foreground);" data-key="haveAccount">Already have an account?</p>
                     <button type="button" onclick="switchToLogin()" style="background: none; border: none; color: var(--primary); cursor: pointer; text-decoration: underline;" data-key="loginHere">Login Here</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="forgotPassword">Forgot Password</h3>
+                <button class="close-btn" onclick="closeForgotPassword()">&times;</button>
+            </div>
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <label data-key="username">Username</label>
+                    <input type="text" id="forgotUsername" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="newPassword">New Password</label>
+                    <input type="password" id="forgotNewPassword" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="forgotConfirmPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeForgotPassword()" data-key="cancel">Cancel</button>
+                    <button type="submit" data-key="resetPassword">Reset Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="changePassword">Change Password</h3>
+                <button class="close-btn" onclick="closeChangePassword()">&times;</button>
+            </div>
+            <form id="changePasswordForm">
+                <div class="form-group">
+                    <label data-key="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="newPassword">New Password</label>
+                    <input type="password" id="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmNewPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeChangePassword()" data-key="cancel">Cancel</button>
+                    <button type="submit" data-key="changePassword">Change Password</button>
                 </div>
             </form>
         </div>

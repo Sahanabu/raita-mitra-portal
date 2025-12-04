@@ -263,6 +263,23 @@ function switchToLogin() {
     openUserLogin();
 }
 
+function openForgotPassword() {
+    closeUserLogin();
+    document.getElementById('forgotPasswordModal').classList.add('active');
+}
+
+function closeForgotPassword() {
+    document.getElementById('forgotPasswordModal').classList.remove('active');
+}
+
+function openChangePassword() {
+    document.getElementById('changePasswordModal').classList.add('active');
+}
+
+function closeChangePassword() {
+    document.getElementById('changePasswordModal').classList.remove('active');
+}
+
 // Authentication functions
 function checkAuthAndRedirect(page) {
     if (localStorage.getItem('userLoggedIn') === 'true') {
@@ -318,9 +335,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeUserLogin();
             }
         } else {
+            let attempts = parseInt(localStorage.getItem('loginAttempts') || '0') + 1;
+            localStorage.setItem('loginAttempts', attempts.toString());
+            
+            if (attempts >= 2) {
+                document.getElementById('forgotPasswordLink').style.display = 'block';
+            }
+            
             alert(currentLanguage === 'kn' ? 
-                'ತಪ್ಪು ಬಳಕೆದಾರ ಹೆಸರು ಅಥವಾ ಪಾಸ್ವರ್ಡ್!\n\nಮಾದರಿ ಲಾಗಿನ್:\nಬಳಕೆದಾರ: farmer1, ಪಾಸ್ವರ್ಡ್: pass123' : 
-                'Invalid username or password!\n\nSample Login:\nUsername: farmer1, Password: pass123');
+                'ತಪ್ಪು ಬಳಕೆದಾರ ಹೆಸರು ಅಥವಾ ಪಾಸ್ವರ್ಡ್!' : 
+                'Invalid username or password!');
         }
     });
     
@@ -357,6 +381,74 @@ document.addEventListener('DOMContentLoaded', function() {
         
         closeRegistration();
         document.getElementById('registrationForm').reset();
+    });
+    
+    // Forgot password form
+    document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('forgotUsername').value;
+        const newPassword = document.getElementById('forgotNewPassword').value;
+        const confirmPassword = document.getElementById('forgotConfirmPassword').value;
+        
+        if (newPassword !== confirmPassword) {
+            alert(currentLanguage === 'kn' ? 
+                'ಪಾಸ್ವರ್ಡ್ ಮತ್ತು ನಿರ್ಧಾರಣೆ ಪಾಸ್ವರ್ಡ್ ಸಮಾನವಾಗಿಲ್ಲ' : 
+                'Password and confirm password do not match');
+            return;
+        }
+        
+        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+        
+        if (registeredUsers[username]) {
+            registeredUsers[username] = newPassword;
+            localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+            localStorage.removeItem('loginAttempts');
+            
+            alert(currentLanguage === 'kn' ? 
+                'ಪಾಸ್ವರ್ಡ್ ಯಶಸ್ವಿಯಾಗಿ ರೀಸೆಟ್ ಮಾಡಲಾಗಿದೆ!' : 
+                'Password reset successfully!');
+            
+            closeForgotPassword();
+            document.getElementById('forgotPasswordForm').reset();
+        } else {
+            alert(currentLanguage === 'kn' ? 
+                'ಬಳಕೆದಾರ ಹೆಸರು ಕಂಡುಬಂದಿಲ್ಲ' : 
+                'Username not found');
+        }
+    });
+    
+    // Change password form
+    document.getElementById('changePasswordForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const currentPassword = document.getElementById('currentPassword').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmNewPassword').value;
+        const currentUser = localStorage.getItem('currentUser');
+        
+        if (newPassword !== confirmPassword) {
+            alert(currentLanguage === 'kn' ? 
+                'ಪಾಸ್ವರ್ಡ್ ಮತ್ತು ನಿರ್ಧಾರಣೆ ಪಾಸ್ವರ್ಡ್ ಸಮಾನವಾಗಿಲ್ಲ' : 
+                'Password and confirm password do not match');
+            return;
+        }
+        
+        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+        
+        if (registeredUsers[currentUser] && registeredUsers[currentUser] === currentPassword) {
+            registeredUsers[currentUser] = newPassword;
+            localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+            
+            alert(currentLanguage === 'kn' ? 
+                'ಪಾಸ್ವರ್ಡ್ ಯಶಸ್ವಿಯಾಗಿ ಬದಲಾಗಿದೆ!' : 
+                'Password changed successfully!');
+            
+            closeChangePassword();
+            document.getElementById('changePasswordForm').reset();
+        } else {
+            alert(currentLanguage === 'kn' ? 
+                'ಸದ್ಯದ ಪಾಸ್ವರ್ಡ್ ತಪ್ಪು' : 
+                'Current password is incorrect');
+        }
     });
     
     // Admin login form

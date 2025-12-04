@@ -124,6 +124,11 @@ const translations = {
     createAccount: 'Create New Account',
     haveAccount: 'Already have an account?',
     loginHere: 'Login Here',
+    forgotPassword: 'Forgot Password?',
+    newPassword: 'New Password',
+    resetPassword: 'Reset Password',
+    changePassword: 'Change Password',
+    currentPassword: 'Current Password',
   },
   kn: {
     // Navbar
@@ -249,5 +254,10 @@ const translations = {
     createAccount: 'ಹೊಸ ಖಾತೆ ಸೃಷ್ಟಿಸಿ',
     haveAccount: 'ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯಾ?',
     loginHere: 'ಇಲ್ಲಿ ಲಾಗಿನ್ ಮಾಡಿ',
+    forgotPassword: 'ಪಾಸ್ವರ್ಡ್ ಮರೆತಿದ್ದೀರಾ?',
+    newPassword: 'ಹೊಸ ಪಾಸ್ವರ್ಡ್',
+    resetPassword: 'ಪಾಸ್ವರ್ಡ್ ರೀಸೆಟ್ ಮಾಡಿ',
+    changePassword: 'ಪಾಸ್ವರ್ಡ್ ಬದಲಾಯಿಸಿ',
+    currentPassword: 'ಸದ್ಯದ ಪಾಸ್ವರ್ಡ್',
   }
 };
