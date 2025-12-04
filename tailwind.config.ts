@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'Noto Sans Kannada', 'sans-serif'],
+        kannada: ['Noto Sans Kannada', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +51,21 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom farm colors
+        green: {
+          light: "hsl(var(--green-light))",
+          dark: "hsl(var(--green-dark))",
+        },
+        yellow: {
+          bright: "hsl(var(--yellow-bright))",
+          gold: "hsl(var(--yellow-gold))",
+        },
+        brown: {
+          earth: "hsl(var(--brown-earth))",
+          light: "hsl(var(--brown-light))",
+        },
+        cream: "hsl(var(--cream))",
+        leaf: "hsl(var(--leaf))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,20 +84,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
