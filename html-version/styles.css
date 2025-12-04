@@ -1155,7 +1155,26 @@ body {
     cursor: not-allowed;
 }
 
-/* Responsive Design */
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .crops-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Landscape */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -1172,20 +1191,23 @@ body {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 0.75rem;
     }
     
     .hero-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
     
     .features-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .crops-controls {
         flex-direction: column;
         align-items: stretch;
+        gap: 1rem;
     }
     
     .search-box {
@@ -1194,51 +1216,137 @@ body {
     
     .filter-buttons {
         justify-content: center;
+        flex-wrap: wrap;
     }
     
-    .crops-grid {
-        grid-template-columns: 1fr;
-    }
-    
+    .crops-grid,
     .tips-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .months-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
     
     .chat-window {
-        width: 300px;
+        width: 320px;
+        bottom: 70px;
+        right: 10px;
+    }
+    
+    .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
     }
 }
 
+/* Mobile Portrait */
 @media (max-width: 480px) {
     .container {
-        padding: 0 0.5rem;
+        padding: 0 1rem;
     }
     
     .hero-section {
-        padding: 2rem 0;
+        padding: 1rem 0;
+        min-height: 80vh;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .section-page {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
     
     .features-section,
     .about-section,
     .cta-section {
-        padding: 3rem 0;
+        padding: 2rem 0;
+    }
+    
+    .nav-content {
+        height: 60px;
+    }
+    
+    .brand-name {
+        font-size: 1.25rem;
+    }
+    
+    .filter-buttons {
+        gap: 0.25rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .months-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .month {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .chat-window {
+        width: 300px;
+        bottom: 80px;
+        right: 5px;
+    }
+    
+    .chat-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .brand-name {
+        font-size: 1.1rem;
     }
     
     .chat-window {
         width: 280px;
+    }
+    
+    .filter-btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    .months-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1260,3 +1368,20 @@ body {
 .mt-2 { margin-top: 0.5rem; }
 .mt-3 { margin-top: 0.75rem; }
 .mt-4 { margin-top: 1rem; }
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .mobile-full-width {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
