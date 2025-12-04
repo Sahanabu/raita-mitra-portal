@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
         currentLanguage = savedLanguage;
     }
     
+    // Reload data from localStorage (admin changes)
+    loadDataFromStorage();
+    filteredTips = [...tips];
+    
     setupEventListeners();
     updateLanguage();
     renderTips();
@@ -154,7 +158,7 @@ function handleChatKeypress(e) {
     }
 }
 
-function sendChatMessage() {
+async function sendChatMessage() {
     const input = document.getElementById('chatInputField');
     const message = input.value.trim();
     
@@ -172,9 +176,9 @@ function sendChatMessage() {
     
     showTypingIndicator();
     
-    setTimeout(() => {
+    try {
+        const botResponse = await getBotResponse(message);
         hideTypingIndicator();
-        const botResponse = getBotResponse(message);
         const botMessage = {
             id: (Date.now() + 1).toString(),
             text: botResponse,
@@ -182,20 +186,25 @@ function sendChatMessage() {
         };
         chatMessages.push(botMessage);
         renderChatMessages();
-    }, 1200);
+    } catch (error) {
+        hideTypingIndicator();
+        const errorMessage = {
+            id: (Date.now() + 1).toString(),
+            text: t('chatError'),
+            sender: 'bot'
+        };
+        chatMessages.push(errorMessage);
+        renderChatMessages();
+    }
 }
 
-function getBotResponse(message) {
-    const lowerMsg = message.toLowerCase();
-    const kb = knowledgeBase[currentLanguage];
-    
-    if (lowerMsg.includes('rice') || lowerMsg.includes('ಭತ್ತ')) return kb.rice;
-    if (lowerMsg.includes('wheat') || lowerMsg.includes('ಗೋಧಿ')) return kb.wheat;
-    if (lowerMsg.includes('pest') || lowerMsg.includes('insect') || lowerMsg.includes('ಕೀಟ')) return kb.pest;
-    if (lowerMsg.includes('water') || lowerMsg.includes('irrigation') || lowerMsg.includes('ನೀರು')) return kb.water;
-    if (lowerMsg.includes('soil') || lowerMsg.includes('ಮಣ್ಣು')) return kb.soil;
-    
-    return kb.default;
+async function getBotResponse(message) {
+    try {
+        return await aiChat.generateResponse(message, currentLanguage);
+    } catch (error) {
+        console.error('Error getting bot response:', error);
+        return aiChat.getFallbackResponse(message, currentLanguage);
+    }
 }
 
 function renderChatMessages() {

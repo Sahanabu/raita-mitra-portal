@@ -30,9 +30,9 @@
                 <!-- Desktop Navigation -->
                 <div class="nav-links">
                     <a href="index.html" class="nav-link active" data-key="navHome">Home</a>
-                    <a href="crops.html" class="nav-link" data-key="navCrops">Crops</a>
-                    <a href="tips.html" class="nav-link" data-key="navTips">Tips</a>
-                    <a href="calendar.html" class="nav-link" data-key="navCalendar">Calendar</a>
+                    <a href="#" class="nav-link" onclick="checkAuthAndRedirect('crops.html')" data-key="navCrops">Crops</a>
+                    <a href="#" class="nav-link" onclick="checkAuthAndRedirect('tips.html')" data-key="navTips">Tips</a>
+                    <a href="#" class="nav-link" onclick="checkAuthAndRedirect('calendar.html')" data-key="navCalendar">Calendar</a>
                 </div>
 
                 <!-- Language Toggle & Mobile Menu -->
@@ -50,9 +50,9 @@
             <!-- Mobile Navigation -->
             <div id="mobileMenu" class="mobile-menu">
                 <a href="index.html" class="mobile-nav-link" data-key="navHome">Home</a>
-                <a href="crops.html" class="mobile-nav-link" data-key="navCrops">Crops</a>
-                <a href="tips.html" class="mobile-nav-link" data-key="navTips">Tips</a>
-                <a href="calendar.html" class="mobile-nav-link" data-key="navCalendar">Calendar</a>
+                <a href="#" class="mobile-nav-link" onclick="checkAuthAndRedirect('crops.html')" data-key="navCrops">Crops</a>
+                <a href="#" class="mobile-nav-link" onclick="checkAuthAndRedirect('tips.html')" data-key="navTips">Tips</a>
+                <a href="#" class="mobile-nav-link" onclick="checkAuthAndRedirect('calendar.html')" data-key="navCalendar">Calendar</a>
             </div>
         </nav>
     </header>
@@ -120,26 +120,26 @@
                 </div>
 
                 <div class="features-grid">
-                    <a href="crops.html" class="feature-card">
+                    <div class="feature-card" onclick="checkAuthAndRedirect('crops.html')">
                         <div class="feature-icon">🌾</div>
                         <h3 class="feature-title" data-key="featureCrops">Crop Information</h3>
                         <p class="feature-desc" data-key="featureCropsDesc">Detailed info about seasonal crops, water needs, and best practices for optimal yield</p>
                         <div class="feature-arrow">→</div>
-                    </a>
+                    </div>
 
-                    <a href="tips.html" class="feature-card">
+                    <div class="feature-card" onclick="checkAuthAndRedirect('tips.html')">
                         <div class="feature-icon">💡</div>
                         <h3 class="feature-title" data-key="featureTips">Farming Tips</h3>
                         <p class="feature-desc" data-key="featureTipsDesc">Expert advice on soil preparation, water management, pest control, and harvesting</p>
                         <div class="feature-arrow">→</div>
-                    </a>
+                    </div>
 
-                    <a href="calendar.html" class="feature-card">
+                    <div class="feature-card" onclick="checkAuthAndRedirect('calendar.html')">
                         <div class="feature-icon">📅</div>
                         <h3 class="feature-title" data-key="featureCalendar">Planting Calendar</h3>
                         <p class="feature-desc" data-key="featureCalendarDesc">Know the best months to plant each crop for your region</p>
                         <div class="feature-arrow">→</div>
-                    </a>
+                    </div>
 
                     <div class="feature-card" onclick="toggleChat()">
                         <div class="feature-icon">🤖</div>
@@ -173,7 +173,31 @@
             </div>
         </section>
 
-
+        <!-- Login Section -->
+        <section id="login" class="login-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-key="loginTitle">Access Your Account</h2>
+                    <p class="section-subtitle" data-key="loginSubtitle">Choose your login type to access personalized features</p>
+                </div>
+                
+                <div class="login-options">
+                    <div class="login-card" onclick="openUserLogin()">
+                        <div class="login-icon">👨‍🌾</div>
+                        <h3 class="login-title" data-key="userLogin">Farmer Login</h3>
+                        <p class="login-desc" data-key="userLoginDesc">Access your farming dashboard, saved crops, and personalized recommendations</p>
+                        <div class="login-arrow">→</div>
+                    </div>
+                    
+                    <div class="login-card" onclick="openAdminLogin()">
+                        <div class="login-icon">⚙️</div>
+                        <h3 class="login-title" data-key="adminLogin">Admin Login</h3>
+                        <p class="login-desc" data-key="adminLoginDesc">Manage crops, tips, and user requests through the admin panel</p>
+                        <div class="login-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- CTA Section -->
         <section class="cta-section">
@@ -182,8 +206,8 @@
                     <h2 class="cta-title" data-key="ctaTitle">Ready to Transform Your Farming?</h2>
                     <p class="cta-subtitle" data-key="ctaSubtitle">Join thousands of farmers who are already benefiting from smart agricultural insights</p>
                     <div class="cta-buttons">
-                        <a href="crops.html" class="btn btn-primary" data-key="ctaBtn1">View Crops</a>
-                        <a href="tips.html" class="btn btn-outline" data-key="ctaBtn2">Get Tips</a>
+                        <button class="btn btn-primary" onclick="checkAuthAndRedirect('crops.html')" data-key="ctaBtn1">View Crops</button>
+                        <button class="btn btn-outline" onclick="checkAuthAndRedirect('tips.html')" data-key="ctaBtn2">Get Tips</button>
                     </div>
                 </div>
             </div>
@@ -204,9 +228,9 @@
 
                 <div class="footer-links">
                     <h4>Quick Links</h4>
-                    <a href="crops.html" data-key="navCrops">Crops</a>
-                    <a href="tips.html" data-key="navTips">Tips</a>
-                    <a href="calendar.html" data-key="navCalendar">Calendar</a>
+                    <a href="#" onclick="checkAuthAndRedirect('crops.html')" data-key="navCrops">Crops</a>
+                    <a href="#" onclick="checkAuthAndRedirect('tips.html')" data-key="navTips">Tips</a>
+                    <a href="#" onclick="checkAuthAndRedirect('calendar.html')" data-key="navCalendar">Calendar</a>
                 </div>
 
                 <div class="footer-connect">
@@ -254,8 +278,57 @@
         </div>
     </div>
 
+    <!-- Login Modals -->
+    <div id="userLoginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="userLogin">Farmer Login</h3>
+                <button class="close-btn" onclick="closeUserLogin()">&times;</button>
+            </div>
+            <form id="userLoginForm">
+                <div class="form-group">
+                    <label data-key="username">Username</label>
+                    <input type="text" id="userUsername" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="password">Password</label>
+                    <input type="password" id="userPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeUserLogin()" data-key="cancel">Cancel</button>
+                    <button type="submit" data-key="login">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="adminLogin">Admin Login</h3>
+                <button class="close-btn" onclick="closeAdminLogin()">&times;</button>
+            </div>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label data-key="username">Username</label>
+                    <input type="text" id="adminUsername" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="password">Password</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeAdminLogin()" data-key="cancel">Cancel</button>
+                    <button type="submit" data-key="login">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script src="translations.js"></script>
+    <script src="config.js"></script>
+    <script src="ai-chat.js"></script>
     <script src="index-script.js"></script>
 </body>
 </html>

@@ -276,6 +276,25 @@ const monthNames = {
   kn: ['ಜನ', 'ಫೆಬ್ರ', 'ಮಾರ್ಚ್', 'ಏಪ್ರಿ', 'ಮೇ', 'ಜೂನ್', 'ಜುಲೈ', 'ಆಗ', 'ಸೆಪ್ಟೆ', 'ಅಕ್ಟೋ', 'ನವೆ', 'ಡಿಸೆ']
 };
 
+// Load data from localStorage (admin changes)
+function loadDataFromStorage() {
+  const savedCrops = localStorage.getItem('cropsData');
+  const savedTips = localStorage.getItem('tipsData');
+  
+  if (savedCrops) {
+    crops.length = 0;
+    crops.push(...JSON.parse(savedCrops));
+  }
+  
+  if (savedTips) {
+    tips.length = 0;
+    tips.push(...JSON.parse(savedTips));
+  }
+}
+
+// Initialize data loading
+loadDataFromStorage();
+
 // Chatbot knowledge base
 const knowledgeBase = {
   en: {

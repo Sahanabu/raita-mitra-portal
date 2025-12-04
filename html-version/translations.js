@@ -103,6 +103,18 @@ const translations = {
     waterLow: 'Low',
     waterMedium: 'Medium',
     waterHigh: 'High',
+    
+    // Login
+    loginTitle: 'Access Your Account',
+    loginSubtitle: 'Choose your login type to access personalized features',
+    userLogin: 'Farmer Login',
+    userLoginDesc: 'Access your farming dashboard, saved crops, and personalized recommendations',
+    adminLogin: 'Admin Login',
+    adminLoginDesc: 'Manage crops, tips, and user requests through the admin panel',
+    username: 'Username',
+    password: 'Password',
+    login: 'Login',
+    cancel: 'Cancel',
   },
   kn: {
     // Navbar
@@ -207,5 +219,17 @@ const translations = {
     waterLow: 'ಕಡಿಮೆ',
     waterMedium: 'ಮಧ್ಯಮ',
     waterHigh: 'ಹೆಚ್ಚು',
+    
+    // Login
+    loginTitle: 'ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಪ್ರವೇಶಿಸಿ',
+    loginSubtitle: 'ವೈಯಕ್ತಿಕ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ನಿಮ್ಮ ಲಾಗಿನ್ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
+    userLogin: 'ರೈತ ಲಾಗಿನ್',
+    userLoginDesc: 'ನಿಮ್ಮ ಕೃಷಿ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್, ಉಳಿಸಿದ ಬೆಳೆಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಶಿಫಾರಸುಗಳನ್ನು ಪ್ರವೇಶಿಸಿ',
+    adminLogin: 'ಅಡ್ಮಿನ್ ಲಾಗಿನ್',
+    adminLoginDesc: 'ಅಡ್ಮಿನ್ ಪ್ಯಾನೆಲ್ ಮೂಲಕ ಬೆಳೆಗಳು, ಸಲಹೆಗಳು ಮತ್ತು ಬಳಕೆದಾರರ ವಿನಂತಿಗಳನ್ನು ನಿರ್ವಹಿಸಿ',
+    username: 'ಬಳಕೆದಾರ ಹೆಸರು',
+    password: 'ಪಾಸ್‌ವರ್ಡ್',
+    login: 'ಲಾಗಿನ್',
+    cancel: 'ರದ್ದುಮಾಡಿ',
   }
 };
