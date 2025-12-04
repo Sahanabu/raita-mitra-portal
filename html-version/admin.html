@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Raita Mitra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal active">
+        <div class="modal-content">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <header class="admin-header">
+            <h1>🌾 Raita Mitra Admin Panel</h1>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </header>
+
+        <nav class="admin-nav">
+            <button class="nav-btn active" data-section="crops">Manage Crops</button>
+            <button class="nav-btn" data-section="tips">Manage Tips</button>
+            <button class="nav-btn" data-section="requests">Crop Requests</button>
+        </nav>
+
+        <!-- Crops Management -->
+        <section id="crops-section" class="admin-section active">
+            <div class="section-header">
+                <h2>Crops Management</h2>
+                <button id="addCropBtn" class="add-btn">+ Add New Crop</button>
+            </div>
+            <div id="cropsTable" class="data-table"></div>
+        </section>
+
+        <!-- Tips Management -->
+        <section id="tips-section" class="admin-section">
+            <div class="section-header">
+                <h2>Tips Management</h2>
+                <button id="addTipBtn" class="add-btn">+ Add New Tip</button>
+            </div>
+            <div id="tipsTable" class="data-table"></div>
+        </section>
+
+        <!-- Crop Requests -->
+        <section id="requests-section" class="admin-section">
+            <div class="section-header">
+                <h2>Crop Requests</h2>
+                <button id="clearRequestsBtn" class="add-btn" style="background: #dc3545;">Clear All</button>
+            </div>
+            <div id="requestsTable" class="data-table"></div>
+        </section>
+    </div>
+
+    <!-- Crop Form Modal -->
+    <div id="cropModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="cropModalTitle">Add New Crop</h3>
+                <button class="close-btn" onclick="closeCropModal()">&times;</button>
+            </div>
+            <form id="cropForm">
+                <input type="hidden" id="cropId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Name (English)</label>
+                        <input type="text" id="cropName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Name (Kannada)</label>
+                        <input type="text" id="cropNameKn" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Season</label>
+                        <select id="cropSeason" required>
+                            <option value="Kharif">Kharif</option>
+                            <option value="Rabi">Rabi</option>
+                            <option value="Zaid">Zaid</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Season (Kannada)</label>
+                        <input type="text" id="cropSeasonKn" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Water Need</label>
+                        <select id="cropWaterNeed" required>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Image (Emoji)</label>
+                        <input type="text" id="cropImage" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Planting Months (1-12, comma separated)</label>
+                    <input type="text" id="cropMonths" placeholder="e.g., 6,7,8" required>
+                </div>
+                <div class="form-group">
+                    <label>Description (English)</label>
+                    <textarea id="cropDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Description (Kannada)</label>
+                    <textarea id="cropDescriptionKn" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeCropModal()">Cancel</button>
+                    <button type="submit">Save Crop</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tip Form Modal -->
+    <div id="tipModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="tipModalTitle">Add New Tip</h3>
+                <button class="close-btn" onclick="closeTipModal()">&times;</button>
+            </div>
+            <form id="tipForm">
+                <input type="hidden" id="tipId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Title (English)</label>
+                        <input type="text" id="tipTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Title (Kannada)</label>
+                        <input type="text" id="tipTitleKn" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="tipCategory" required>
+                        <option value="soil">Soil Management</option>
+                        <option value="water">Water Management</option>
+                        <option value="pest">Pest Control</option>
+                        <option value="harvest">Harvesting</option>
+                        <option value="general">General Tips</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Description (English)</label>
+                    <textarea id="tipDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Description (Kannada)</label>
+                    <textarea id="tipDescriptionKn" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeTipModal()">Cancel</button>
+                    <button type="submit">Save Tip</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="admin-script.js"></script>
+</body>
+</html>

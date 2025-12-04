@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raita Mitra – Farmer Assistance Portal</title>
+    <meta name="description" content="Empowering farmers with smart crop information, farming tips, planting calendars, and AI-powered assistance. Get expert advice in English and Kannada.">
+    <meta name="author" content="Raita Mitra">
+    <meta name="keywords" content="farming, agriculture, crops, farmer portal, Kannada, Karnataka, India, farming tips, planting calendar">
+    
+    <meta property="og:title" content="Raita Mitra – Farmer Assistance Portal">
+    <meta property="og:description" content="Empowering farmers with smart crop information, farming tips, and AI-powered assistance.">
+    <meta property="og:type" content="website">
+    
+    <link rel="canonical" href="https://raita-mitra.lovable.app/">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="navbar" class="navbar">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="#home" class="logo">
+                    <span class="logo-emoji">🌾</span>
+                    <span class="brand-name" data-key="brandName">Raita Mitra</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link active" data-key="navHome">Home</a>
+                    <a href="crops.html" class="nav-link" data-key="navCrops">Crops</a>
+                    <a href="tips.html" class="nav-link" data-key="navTips">Tips</a>
+                    <a href="calendar.html" class="nav-link" data-key="navCalendar">Calendar</a>
+                </div>
+
+                <!-- Language Toggle & Mobile Menu -->
+                <div class="nav-actions">
+                    <button id="langToggle" class="lang-toggle">
+                        <span class="globe-icon">🌐</span>
+                        <span data-key="langToggle">ಕನ್ನಡ</span>
+                    </button>
+                    <button id="mobileMenuToggle" class="mobile-menu-toggle">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="mobile-menu">
+                <a href="index.html" class="mobile-nav-link" data-key="navHome">Home</a>
+                <a href="crops.html" class="mobile-nav-link" data-key="navCrops">Crops</a>
+                <a href="tips.html" class="mobile-nav-link" data-key="navTips">Tips</a>
+                <a href="calendar.html" class="mobile-nav-link" data-key="navCalendar">Calendar</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg-elements">
+                <div class="bg-emoji bg-emoji-1">🌾</div>
+                <div class="bg-emoji bg-emoji-2">🌻</div>
+                <div class="bg-emoji bg-emoji-3">🌽</div>
+                <div class="bg-emoji bg-emoji-4">🚜</div>
+                <div class="bg-emoji bg-emoji-5">💧</div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Badge -->
+                    <div class="hero-badge">
+                        <span class="badge-icon">🌱</span>
+                        <span class="badge-text" data-key="heroTitle">Smart Farming Assistant for Farmers</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="hero-title" data-key="heroTitle">Empowering Farmers with Smart Information</h1>
+
+                    <!-- Subtitle -->
+                    <p class="hero-subtitle" data-key="heroSubtitle">Get crop guidance, farming tips, and instant answers from AgroBot - your AI farming assistant</p>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToFeatures()">
+                            <span data-key="heroBtn">Get Started</span>
+                            <span class="btn-icon">⬇</span>
+                        </button>
+                        <a href="crops.html" class="btn btn-outline" data-key="heroExplore">Explore Crops</a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value">12+</div>
+                            <div class="stat-label" data-key="statCrops">Crops</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">15+</div>
+                            <div class="stat-label" data-key="statTips">Tips</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">24/7</div>
+                            <div class="stat-label" data-key="statAI">AI Help</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-key="featuresTitle">Our Features</h2>
+                    <p class="section-subtitle" data-key="featuresSubtitle">Everything you need to make informed farming decisions</p>
+                </div>
+
+                <div class="features-grid">
+                    <a href="crops.html" class="feature-card">
+                        <div class="feature-icon">🌾</div>
+                        <h3 class="feature-title" data-key="featureCrops">Crop Information</h3>
+                        <p class="feature-desc" data-key="featureCropsDesc">Detailed info about seasonal crops, water needs, and best practices for optimal yield</p>
+                        <div class="feature-arrow">→</div>
+                    </a>
+
+                    <a href="tips.html" class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3 class="feature-title" data-key="featureTips">Farming Tips</h3>
+                        <p class="feature-desc" data-key="featureTipsDesc">Expert advice on soil preparation, water management, pest control, and harvesting</p>
+                        <div class="feature-arrow">→</div>
+                    </a>
+
+                    <a href="calendar.html" class="feature-card">
+                        <div class="feature-icon">📅</div>
+                        <h3 class="feature-title" data-key="featureCalendar">Planting Calendar</h3>
+                        <p class="feature-desc" data-key="featureCalendarDesc">Know the best months to plant each crop for your region</p>
+                        <div class="feature-arrow">→</div>
+                    </a>
+
+                    <div class="feature-card" onclick="toggleChat()">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title" data-key="featureBot">Ask AgroBot</h3>
+                        <p class="feature-desc" data-key="featureBotDesc">AI-powered assistant ready to answer all your farming questions instantly</p>
+                        <div class="feature-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title" data-key="aboutTitle">About Raita Mitra</h2>
+                        <h3 class="about-subtitle" data-key="aboutSubtitle">Bridging Technology and Agriculture</h3>
+                        <p class="about-desc" data-key="aboutDesc">Raita Mitra is dedicated to empowering farmers with accessible, accurate, and timely agricultural information. Our platform combines traditional farming wisdom with modern AI technology to help farmers make better decisions.</p>
+                        
+                        <div class="impact-list">
+                            <h4 data-key="aboutImpact">Impact We Create</h4>
+                            <ul>
+                                <li data-key="aboutImpact1">Increased crop yields through better planning</li>
+                                <li data-key="aboutImpact2">Reduced crop losses with timely advice</li>
+                                <li data-key="aboutImpact3">24/7 access to farming knowledge</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title" data-key="ctaTitle">Ready to Transform Your Farming?</h2>
+                    <p class="cta-subtitle" data-key="ctaSubtitle">Join thousands of farmers who are already benefiting from smart agricultural insights</p>
+                    <div class="cta-buttons">
+                        <a href="crops.html" class="btn btn-primary" data-key="ctaBtn1">View Crops</a>
+                        <a href="tips.html" class="btn btn-outline" data-key="ctaBtn2">Get Tips</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-emoji">🌾</span>
+                        <span class="brand-name" data-key="brandName">Raita Mitra</span>
+                    </div>
+                    <p class="footer-tagline" data-key="footerTagline">Empowering farmers with knowledge</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="crops.html" data-key="navCrops">Crops</a>
+                    <a href="tips.html" data-key="navTips">Tips</a>
+                    <a href="calendar.html" data-key="navCalendar">Calendar</a>
+                </div>
+
+                <div class="footer-connect">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <span class="social-icon">📧</span>
+                        <span class="social-icon">📱</span>
+                        <span class="social-icon">🌐</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-key="footerText">© 2025 Raita Mitra – Farmer Assistance Portal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ChatBot -->
+    <div id="chatBot" class="chatbot">
+        <button id="chatToggle" class="chat-toggle">
+            <span class="chat-icon">💬</span>
+            <span class="close-icon">✕</span>
+        </button>
+
+        <div id="chatWindow" class="chat-window">
+            <div class="chat-header">
+                <div class="chat-avatar">🤖</div>
+                <div class="chat-info">
+                    <h3 data-key="chatTitle">Ask AgroBot</h3>
+                    <p data-key="chatSubtitle">Your AI Farming Assistant</p>
+                </div>
+            </div>
+
+            <div id="chatMessages" class="chat-messages">
+                <!-- Messages will be populated by JavaScript -->
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="chatInputField" placeholder="Type your question..." data-placeholder="chatPlaceholder">
+                <button id="chatSend" class="chat-send-btn">
+                    <span>📤</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="translations.js"></script>
+    <script src="index-script.js"></script>
+</body>
+</html>

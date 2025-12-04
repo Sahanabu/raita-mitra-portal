@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips - Raita Mitra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="navbar" class="navbar">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-emoji">🌾</span>
+                    <span class="brand-name" data-key="brandName">Raita Mitra</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link" data-key="navHome">Home</a>
+                    <a href="crops.html" class="nav-link" data-key="navCrops">Crops</a>
+                    <a href="tips.html" class="nav-link active" data-key="navTips">Tips</a>
+                    <a href="calendar.html" class="nav-link" data-key="navCalendar">Calendar</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="langToggle" class="lang-toggle">
+                        <span class="globe-icon">🌐</span>
+                        <span data-key="langToggle">ಕನ್ನಡ</span>
+                    </button>
+                    <button id="mobileMenuToggle" class="mobile-menu-toggle">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+            <div id="mobileMenu" class="mobile-menu">
+                <a href="index.html" class="mobile-nav-link" data-key="navHome">Home</a>
+                <a href="crops.html" class="mobile-nav-link" data-key="navCrops">Crops</a>
+                <a href="tips.html" class="mobile-nav-link" data-key="navTips">Tips</a>
+                <a href="calendar.html" class="mobile-nav-link" data-key="navCalendar">Calendar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 70px;">
+        <section class="tips-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title" data-key="tipsPageTitle">Farming Tips</h1>
+                    <p class="section-subtitle" data-key="tipsPageSubtitle">Expert advice to help you grow better crops and increase your yield</p>
+                </div>
+
+                <div class="tips-categories">
+                    <button class="category-btn active" data-category="all">All Tips</button>
+                    <button class="category-btn" data-category="soil" data-key="tipsCategorySoil">Soil Management</button>
+                    <button class="category-btn" data-category="water" data-key="tipsCategoryWater">Water Management</button>
+                    <button class="category-btn" data-category="pest" data-key="tipsCategoryPest">Pest Control</button>
+                    <button class="category-btn" data-category="harvest" data-key="tipsCategoryHarvest">Harvesting</button>
+                </div>
+
+                <div id="tipsGrid" class="tips-grid">
+                    <!-- Tips will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ChatBot -->
+    <div id="chatBot" class="chatbot">
+        <button id="chatToggle" class="chat-toggle">
+            <span class="chat-icon">💬</span>
+            <span class="close-icon">✕</span>
+        </button>
+        <div id="chatWindow" class="chat-window">
+            <div class="chat-header">
+                <div class="chat-avatar">🤖</div>
+                <div class="chat-info">
+                    <h3 data-key="chatTitle">Ask AgroBot</h3>
+                    <p data-key="chatSubtitle">Your AI Farming Assistant</p>
+                </div>
+            </div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="chatInputField" placeholder="Type your question..." data-placeholder="chatPlaceholder">
+                <button id="chatSend" class="chat-send-btn"><span>📤</span></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="translations.js"></script>
+    <script src="tips-script.js"></script>
+</body>
+</html>
