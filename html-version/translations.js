@@ -7,7 +7,7 @@ const translations = {
     navTips: 'Tips',
     navCalendar: 'Calendar',
     langToggle: 'ಕನ್ನಡ',
-    brandName: 'Raita Mitra',
+    brandName: 'Rait Info',
     
     // Hero
     heroTitle: 'Empowering Farmers with Smart Information',
@@ -33,9 +33,9 @@ const translations = {
     featureBotDesc: 'AI-powered assistant ready to answer all your farming questions instantly',
     
     // About
-    aboutTitle: 'About Raita Mitra',
+    aboutTitle: 'About Rait Info',
     aboutSubtitle: 'Bridging Technology and Agriculture',
-    aboutDesc: 'Raita Mitra is dedicated to empowering farmers with accessible, accurate, and timely agricultural information. Our platform combines traditional farming wisdom with modern AI technology to help farmers make better decisions.',
+    aboutDesc: 'Rait Info is dedicated to empowering farmers with accessible, accurate, and timely agricultural information. Our platform combines traditional farming wisdom with modern AI technology to help farmers make better decisions.',
     aboutImpact: 'Impact We Create',
     aboutImpact1: 'Increased crop yields through better planning',
     aboutImpact2: 'Reduced crop losses with timely advice',
@@ -96,7 +96,7 @@ const translations = {
     chatError: 'Sorry, I encountered an error. Please try again.',
     
     // Footer
-    footerText: '© 2025 Raita Mitra – Farmer Assistance Portal',
+    footerText: '© 2025 Rait Info – Farmer Assistance Portal',
     footerTagline: 'Empowering farmers with knowledge',
     
     // Water needs
@@ -115,6 +115,15 @@ const translations = {
     password: 'Password',
     login: 'Login',
     cancel: 'Cancel',
+    userRegister: 'New Farmer Registration',
+    userRegisterDesc: 'Create a new account to access all farming features and personalized content',
+    fullName: 'Full Name',
+    confirmPassword: 'Confirm Password',
+    register: 'Register',
+    noAccount: 'Don\'t have an account?',
+    createAccount: 'Create New Account',
+    haveAccount: 'Already have an account?',
+    loginHere: 'Login Here',
   },
   kn: {
     // Navbar
@@ -123,7 +132,7 @@ const translations = {
     navTips: 'ಸಲಹೆಗಳು',
     navCalendar: 'ಕ್ಯಾಲೆಂಡರ್',
     langToggle: 'English',
-    brandName: 'ರೈತ ಮಿತ್ರ',
+    brandName: 'ರೈತ ಇನ್ಫೋ',
     
     // Hero
     heroTitle: 'ಸ್ಮಾರ್ಟ್ ಮಾಹಿತಿಯೊಂದಿಗೆ ರೈತರನ್ನು ಸಬಲೀಕರಣ',
@@ -149,9 +158,9 @@ const translations = {
     featureBotDesc: 'ನಿಮ್ಮ ಎಲ್ಲಾ ಕೃಷಿ ಪ್ರಶ್ನೆಗಳಿಗೆ ತ್ವರಿತವಾಗಿ ಉತ್ತರಿಸಲು AI-ಚಾಲಿತ ಸಹಾಯಕ',
     
     // About
-    aboutTitle: 'ರೈತ ಮಿತ್ರ ಬಗ್ಗೆ',
+    aboutTitle: 'ರೈತ ಇನ್ಫೋ ಬಗ್ಗೆ',
     aboutSubtitle: 'ತಂತ್ರಜ್ಞಾನ ಮತ್ತು ಕೃಷಿಯ ಸೇತುವೆ',
-    aboutDesc: 'ರೈತ ಮಿತ್ರವು ರೈತರಿಗೆ ಸುಲಭವಾಗಿ ಪ್ರವೇಶಿಸಬಹುದಾದ, ನಿಖರವಾದ ಮತ್ತು ಸಮಯೋಚಿತ ಕೃಷಿ ಮಾಹಿತಿಯನ್ನು ನೀಡಲು ಸಮರ್ಪಿತವಾಗಿದೆ. ನಮ್ಮ ವೇದಿಕೆಯು ಸಾಂಪ್ರದಾಯಿಕ ಕೃಷಿ ಜ್ಞಾನವನ್ನು ಆಧುನಿಕ AI ತಂತ್ರಜ್ಞಾನದೊಂದಿಗೆ ಸಂಯೋಜಿಸುತ್ತದೆ.',
+    aboutDesc: 'ರೈತ ಇನ್ಫೋವು ರೈತರಿಗೆ ಸುಲಭವಾಗಿ ಪ್ರವೇಶಿಸಬಹುದಾದ, ನಿಖರವಾದ ಮತ್ತು ಸಮಯೋಚಿತ ಕೃಷಿ ಮಾಹಿತಿಯನ್ನು ನೀಡಲು ಸಮರ್ಪಿತವಾಗಿದೆ. ನಮ್ಮ ವೇದಿಕೆಯು ಸಾಂಪ್ರದಾಯಿಕ ಕೃಷಿ ಜ್ಞಾನವನ್ನು ಆಧುನಿಕ AI ತಂತ್ರಜ್ಞಾನದೊಂದಿಗೆ ಸಂಯೋಜಿಸುತ್ತದೆ.',
     aboutImpact: 'ನಾವು ಸೃಷ್ಟಿಸುವ ಪ್ರಭಾವ',
     aboutImpact1: 'ಉತ್ತಮ ಯೋಜನೆಯ ಮೂಲಕ ಹೆಚ್ಚಿದ ಬೆಳೆ ಇಳುವರಿ',
     aboutImpact2: 'ಸಮಯೋಚಿತ ಸಲಹೆಯೊಂದಿಗೆ ಕಡಿಮೆಯಾದ ಬೆಳೆ ನಷ್ಟ',
@@ -212,7 +221,7 @@ const translations = {
     chatError: 'ಕ್ಷಮಿಸಿ, ದೋಷ ಸಂಭವಿಸಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
     
     // Footer
-    footerText: '© 2025 ರೈತ ಮಿತ್ರ – ರೈತ ಸಹಾಯ ಪೋರ್ಟಲ್',
+    footerText: '© 2025 ರೈತ ಇನ್ಫೋ – ರೈತ ಸಹಾಯ ಪೋರ್ಟಲ್',
     footerTagline: 'ಜ್ಞಾನದೊಂದಿಗೆ ರೈತರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು',
     
     // Water needs
@@ -231,5 +240,14 @@ const translations = {
     password: 'ಪಾಸ್‌ವರ್ಡ್',
     login: 'ಲಾಗಿನ್',
     cancel: 'ರದ್ದುಮಾಡಿ',
+    userRegister: 'ಹೊಸ ರೈತ ನೋಂದಣಿ',
+    userRegisterDesc: 'ಎಲ್ಲಾ ಕೃಷಿ ವೈಶಿಷ್ಟ್ಯಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ವಿಷಯಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ಹೊಸ ಖಾತೆಯನ್ನು ಸೃಷ್ಟಿಸಿ',
+    fullName: 'ಪೂರ್ಣ ಹೆಸರು',
+    confirmPassword: 'ಪಾಸ್ವರ್ಡ್ ನಿರ್ಧಾರಿಸಿ',
+    register: 'ನೋಂದಣಿ',
+    noAccount: 'ಖಾತೆ ಇಲ್ಲವಾ?',
+    createAccount: 'ಹೊಸ ಖಾತೆ ಸೃಷ್ಟಿಸಿ',
+    haveAccount: 'ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯಾ?',
+    loginHere: 'ಇಲ್ಲಿ ಲಾಗಿನ್ ಮಾಡಿ',
   }
 };

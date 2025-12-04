@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raita Mitra – Farmer Assistance Portal</title>
+    <title>Rait Info – Farmer Assistance Portal</title>
     <meta name="description" content="Empowering farmers with smart crop information, farming tips, planting calendars, and AI-powered assistance. Get expert advice in English and Kannada.">
-    <meta name="author" content="Raita Mitra">
+    <meta name="author" content="Rait Info">
     <meta name="keywords" content="farming, agriculture, crops, farmer portal, Kannada, Karnataka, India, farming tips, planting calendar">
     
-    <meta property="og:title" content="Raita Mitra – Farmer Assistance Portal">
+    <meta property="og:title" content="Rait Info – Farmer Assistance Portal">
     <meta property="og:description" content="Empowering farmers with smart crop information, farming tips, and AI-powered assistance.">
     <meta property="og:type" content="website">
     
@@ -189,6 +189,13 @@
                         <div class="login-arrow">→</div>
                     </div>
                     
+                    <div class="login-card" onclick="openRegistration()">
+                        <div class="login-icon">📝</div>
+                        <h3 class="login-title" data-key="userRegister">New Farmer Registration</h3>
+                        <p class="login-desc" data-key="userRegisterDesc">Create a new account to access all farming features and personalized content</p>
+                        <div class="login-arrow">→</div>
+                    </div>
+                    
                     <div class="login-card" onclick="openAdminLogin()">
                         <div class="login-icon">⚙️</div>
                         <h3 class="login-title" data-key="adminLogin">Admin Login</h3>
@@ -297,6 +304,45 @@
                 <div class="form-actions">
                     <button type="button" onclick="closeUserLogin()" data-key="cancel">Cancel</button>
                     <button type="submit" data-key="login">Login</button>
+                </div>
+                <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <p style="margin-bottom: 0.5rem; color: var(--muted-foreground);" data-key="noAccount">Don't have an account?</p>
+                    <button type="button" onclick="switchToRegistration()" style="background: none; border: none; color: var(--primary); cursor: pointer; text-decoration: underline;" data-key="createAccount">Create New Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-key="userRegister">New Farmer Registration</h3>
+                <button class="close-btn" onclick="closeRegistration()">&times;</button>
+            </div>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label data-key="fullName">Full Name</label>
+                    <input type="text" id="regFullName" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="username">Username</label>
+                    <input type="text" id="regUsername" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="password">Password</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="confirmPassword">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeRegistration()" data-key="cancel">Cancel</button>
+                    <button type="submit" data-key="register">Register</button>
+                </div>
+                <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <p style="margin-bottom: 0.5rem; color: var(--muted-foreground);" data-key="haveAccount">Already have an account?</p>
+                    <button type="button" onclick="switchToLogin()" style="background: none; border: none; color: var(--primary); cursor: pointer; text-decoration: underline;" data-key="loginHere">Login Here</button>
                 </div>
             </form>
         </div>

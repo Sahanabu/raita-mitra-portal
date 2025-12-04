@@ -245,11 +245,30 @@ function closeAdminLogin() {
     document.getElementById('adminLoginModal').classList.remove('active');
 }
 
+function openRegistration() {
+    document.getElementById('registrationModal').classList.add('active');
+}
+
+function closeRegistration() {
+    document.getElementById('registrationModal').classList.remove('active');
+}
+
+function switchToRegistration() {
+    closeUserLogin();
+    openRegistration();
+}
+
+function switchToLogin() {
+    closeRegistration();
+    openUserLogin();
+}
+
 // Authentication functions
 function checkAuthAndRedirect(page) {
     if (localStorage.getItem('userLoggedIn') === 'true') {
         window.location.href = page;
     } else {
+        localStorage.setItem('intendedPage', page);
         alert(currentLanguage === 'kn' ? 
             'ದಯವಿಟ್ಟು ಮೊದಲು ಲಾಗಿನ್ ಮಾಡಿ' : 
             'Please login first to access this page');
@@ -271,26 +290,73 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = document.getElementById('userUsername').value;
         const password = document.getElementById('userPassword').value;
         
-        // Sample user credentials
-        const validUsers = {
-            'Raghu': 'Raghu123',
-            'sahana': 'sahana123',
+        // Get registered users from localStorage
+        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+        
+        // Sample default users
+        const defaultUsers = {
+            'farmer1': 'pass123',
+            'ravi': 'ravi123',
             'priya': 'priya123',
             'kumar': 'kumar123'
         };
         
-        if (validUsers[username] && validUsers[username] === password) {
+        const allUsers = {...defaultUsers, ...registeredUsers};
+        
+        if (allUsers[username] && allUsers[username] === password) {
             localStorage.setItem('userLoggedIn', 'true');
             localStorage.setItem('currentUser', username);
-            alert(currentLanguage === 'kn' ? 
-                'ಬಳಕೆದಾರ ಲಾಗಿನ್ ಯಶಸ್ವಿಯಾಗಿದೆ!' : 
-                'User login successful!');
-            closeUserLogin();
+            
+            const intendedPage = localStorage.getItem('intendedPage');
+            if (intendedPage) {
+                localStorage.removeItem('intendedPage');
+                window.location.href = intendedPage;
+            } else {
+                alert(currentLanguage === 'kn' ? 
+                    'ಬಳಕೆದಾರ ಲಾಗಿನ್ ಯಶಸ್ವಿಯಾಗಿದೆ!' : 
+                    'User login successful!');
+                closeUserLogin();
+            }
         } else {
             alert(currentLanguage === 'kn' ? 
                 'ತಪ್ಪು ಬಳಕೆದಾರ ಹೆಸರು ಅಥವಾ ಪಾಸ್ವರ್ಡ್!\n\nಮಾದರಿ ಲಾಗಿನ್:\nಬಳಕೆದಾರ: farmer1, ಪಾಸ್ವರ್ಡ್: pass123' : 
                 'Invalid username or password!\n\nSample Login:\nUsername: farmer1, Password: pass123');
         }
+    });
+    
+    // Registration form
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fullName = document.getElementById('regFullName').value;
+        const username = document.getElementById('regUsername').value;
+        const password = document.getElementById('regPassword').value;
+        const confirmPassword = document.getElementById('regConfirmPassword').value;
+        
+        if (password !== confirmPassword) {
+            alert(currentLanguage === 'kn' ? 
+                'ಪಾಸ್ವರ್ಡ್ ಮತ್ತು ನಿರ್ಧಾರಣೆ ಪಾಸ್ವರ್ಡ್ ಸಮಾನವಾಗಿಲ್ಲ' : 
+                'Password and confirm password do not match');
+            return;
+        }
+        
+        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '{}');
+        
+        if (registeredUsers[username]) {
+            alert(currentLanguage === 'kn' ? 
+                'ಈ ಬಳಕೆದಾರ ಹೆಸರು ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದೆ' : 
+                'Username already exists');
+            return;
+        }
+        
+        registeredUsers[username] = password;
+        localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+        
+        alert(currentLanguage === 'kn' ? 
+            'ನೋಂದಣಿ ಯಶಸ್ವಿಯಾಗಿದೆ! ಇಪ್ಪುದು ಲಾಗಿನ್ ಮಾಡಿ' : 
+            'Registration successful! You can now login');
+        
+        closeRegistration();
+        document.getElementById('registrationForm').reset();
     });
     
     // Admin login form
